@@ -18,22 +18,20 @@ public class MultiplicationTable {
     }
 
     public String generateTable(int start, int end) {
-        String output = "";
-        for ( int i = start; i < end + 1; i ++) {
-
-            output += generateLine(start, i) + System.lineSeparator();
+        StringBuilder output = new StringBuilder();
+        for ( int index = start; index < end + 1; index ++) {
+            output.append(generateLine(start, index)).append(System.lineSeparator());
         }
-        return output.trim();
+        return output.toString().trim();
     }
 
     public String generateLine(int start, int row) {
-        String output = "";
-        for ( int i = start; i < row + 1; i ++) {
-            output += generateSingleExpression(i, row) + "  ";
+        StringBuilder output = new StringBuilder();
+        for ( int index = start; index < row + 1; index ++) {
+            output.append(generateSingleExpression(index, row)).append("  ");
         }
-        return output.trim();
+        return output.toString().trim();
     }
-
     public String generateSingleExpression(int multiplicand, int multiplier) {
         return multiplicand + "*" + multiplier + "=" + (multiplicand*multiplier);
     }
