@@ -2,7 +2,7 @@ package com.tw;
 
 public class MultiplicationTable {
     public String create(int start, int end) {
-        return null;
+        return isValid(start, end) ? generateSingleExpression(start, end) : null;
     }
 
     public Boolean isValid(int start, int end) {
