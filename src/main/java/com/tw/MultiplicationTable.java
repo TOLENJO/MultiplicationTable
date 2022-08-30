@@ -22,7 +22,13 @@ public class MultiplicationTable {
     }
 
     public String generateLine(int start, int row) {
-        return null;
+//        String actual = multiplicationTable.generateLine(start, row);
+//        String expected = "2*5=10  3*5=15  4*5=20  5*5=25";
+        String output = "";
+        for ( int i = start; i < row + 1; i ++) {
+            output += generateSingleExpression(i, row) + "  ";
+        }
+        return output.trim();
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
